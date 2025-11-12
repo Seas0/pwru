@@ -28,7 +28,7 @@ func getAvailableFilterFunctions() (map[string]struct{}, error) {
 	// Linux v6.17+ enforce this new path for the tracing functionality
 	f, err := os.Open("/sys/kernel/tracing/available_filter_functions")
 	if err != nil {
-		f, err := os.Open("/sys/kernel/debug/tracing/available_filter_functions")
+		f, err = os.Open("/sys/kernel/debug/tracing/available_filter_functions")
 		if err != nil {
 			return nil, fmt.Errorf("failed to open: %v", err)
 		}
